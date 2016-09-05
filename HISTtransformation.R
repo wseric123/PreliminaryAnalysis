@@ -13,5 +13,9 @@ dfActivity=read.csv("C:/Users/lshen28/Downloads/Janssen Gatech/Activity.csv")
 
 #Final Transformed file
 HistTranfpp=merge(x=dfPerformance, y=dfActivity, by="Uniq.ID", all=TRUE) 
-HistTranf=merge(x=HistTranfpp, y=dfActivity, by="Uniq.ID", all=TRUE) 
-write.csv(HistTranf,"C:/Users/lshen28/Downloads/Janssen Gatech/HistoricP5Tranformed.csv")
+
+write.csv(HistTranfpp,"C:/Users/lshen28/Downloads/Janssen Gatech/HistoricP5Activty_Changes.csv")
+
+HistTranfpf = read.csv("C:/Users/lshen28/Downloads/Janssen Gatech/HistoricP5Activty_Changes.csv")
+HistTranff= merge(x=HistTranfpf,y=dfOtherdetail, by="Uniq.ID", all=TRUE)
+write.csv(HistTranff,"C:/Users/lshen28/Downloads/Janssen Gatech/HistoricP5Transformed.csv")
